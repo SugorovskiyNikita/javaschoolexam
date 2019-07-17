@@ -93,9 +93,10 @@ public class Calculator {
     }
 
     private String parse(double exp) {
-        String result = String.valueOf(exp);
-        if (result.substring(result.lastIndexOf('.')).equals(".0")) {
-            result = result.substring(0, result.length() - 2);
+        String result;
+        if (exp % 1 == 0) {
+            int a = (int) exp;
+            result = String.valueOf(a);
         } else {
             exp = (double) Math.round (exp * 10000) / 10000;
             result = String.valueOf(exp);
@@ -103,7 +104,7 @@ public class Calculator {
         return result;
     }
 
-    private double calculate(double firstElement, double secondElement, char operator) {
+    private double calculate(double firstElement, double secondElement, char operator) throws Exception {
         double result = 0;
         switch (operator) {
             case '+':
@@ -116,6 +117,9 @@ public class Calculator {
                 result = secondElement * firstElement ;
                 break;
             case '/':
+                if (firstElement == 0) {
+                    throw new ArithmeticException();
+                }
                 result = secondElement / firstElement;
                 break;
         }
