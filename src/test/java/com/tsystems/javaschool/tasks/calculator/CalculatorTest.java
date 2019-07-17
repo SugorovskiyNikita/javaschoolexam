@@ -267,4 +267,107 @@ public class CalculatorTest {
         Assert.assertEquals(expectedResult, result);
     }
 
+    @Test
+    public void evaluate20() {
+        //given
+        String input = "(20-6)+9)";
+        String expectedResult = null;
+
+        //run
+        String result = calc.evaluate(input);
+
+        //assert
+        Assert.assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void evaluate21() {
+        //given
+        String input = "3-(30*2-(12 + 2.5)+8.8)";
+        String expectedResult = "-51.3";
+
+        //run
+        String result = calc.evaluate(input);
+
+        //assert
+        Assert.assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void evaluate22() {
+        //given
+        String input = "100/3";
+        String expectedResult = "33.3333";
+
+        //run
+        String result = calc.evaluate(input);
+
+        //assert
+        Assert.assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void evaluate23() {
+        //given
+        String input = "(1+38)*4-5";
+        String expectedResult = "151";
+
+        //run
+        String result = calc.evaluate(input);
+
+        //assert
+        Assert.assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void evaluate24() {
+        //given
+        String input = "7*6/2+8";
+        String expectedResult = "29";
+
+        //run
+        String result = calc.evaluate(input);
+
+        //assert
+        Assert.assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void evaluate25() {
+        //given
+        String input = "10212356/100000";
+        String expectedResult = "102.1236";
+
+        //run
+        String result = calc.evaluate(input);
+
+        //assert
+        Assert.assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void evaluate26() {
+        //given
+        String input = "11/4";
+        String expectedResult = "2.75";
+
+        //run
+        String result = calc.evaluate(input);
+
+        //assert
+        Assert.assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void evaluate27() {
+        //given
+        String input = "100/41";
+        String expectedResult = "2.439";
+
+        //run
+        String result = calc.evaluate(input);
+
+        //assert
+        Assert.assertEquals(expectedResult, result);
+    }
 }
